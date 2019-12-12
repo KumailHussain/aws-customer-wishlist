@@ -1,8 +1,8 @@
 {
   "service": {
-    "service": "customers-addlist",
+    "service": "dev-customer-wishlist",
     "serviceObject": {
-      "name": "customers-addlist"
+      "name": "dev-customer-wishlist"
     },
     "provider": {
       "stage": "dev",
@@ -10,7 +10,7 @@
       "name": "aws",
       "runtime": "nodejs10.x",
       "environment": {
-        "TABLE_NAME": "customers_addList"
+        "TABLE_NAME": "dev-customer-wishlist"
       },
       "region": "us-east-2",
       "iamRoleStatements": [
@@ -26,7 +26,7 @@
             "dynamodb:DeleteItem"
           ],
           "Resource": [
-            "arn:aws:dynamodb:us-east-2:*:table/customers_addList"
+            "arn:aws:dynamodb:us-east-2:*:table/dev-customer-wishlist"
           ]
         }
       ],
@@ -93,13 +93,13 @@
           "CreateItemLogGroup": {
             "Type": "AWS::Logs::LogGroup",
             "Properties": {
-              "LogGroupName": "/aws/lambda/customers-addlist-dev-createItem"
+              "LogGroupName": "/aws/lambda/dev-customer-wishlist-dev-createItem"
             }
           },
           "DeleteDuplicateItemLogGroup": {
             "Type": "AWS::Logs::LogGroup",
             "Properties": {
-              "LogGroupName": "/aws/lambda/customers-addlist-dev-deleteDuplicateItem"
+              "LogGroupName": "/aws/lambda/dev-customer-wishlist-dev-deleteDuplicateItem"
             }
           },
           "IamRoleLambdaExecution": {
@@ -128,7 +128,7 @@
                       "-",
                       [
                         "dev",
-                        "customers-addlist",
+                        "dev-customer-wishlist",
                         "lambda"
                       ]
                     ]
@@ -143,7 +143,7 @@
                         ],
                         "Resource": [
                           {
-                            "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/customers-addlist-dev*:*"
+                            "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/dev-customer-wishlist-dev*:*"
                           }
                         ]
                       },
@@ -154,7 +154,7 @@
                         ],
                         "Resource": [
                           {
-                            "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/customers-addlist-dev*:*:*"
+                            "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/dev-customer-wishlist-dev*:*:*"
                           }
                         ]
                       },
@@ -170,7 +170,7 @@
                 "Fn::Join": [
                   "-",
                   [
-                    "customers-addlist",
+                    "dev-customer-wishlist",
                     "dev",
                     {
                       "Ref": "AWS::Region"
@@ -188,9 +188,9 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/customers-addlist/dev/1576133259731-2019-12-12T06:47:39.731Z/customers-addlist.zip"
+                "S3Key": "serverless/dev-customer-wishlist/dev/1576158099962-2019-12-12T13:41:39.962Z/dev-customer-wishlist.zip"
               },
-              "FunctionName": "customers-addlist-dev-createItem",
+              "FunctionName": "dev-customer-wishlist-dev-createItem",
               "Handler": "handler.createItem",
               "MemorySize": 1024,
               "Role": {
@@ -204,7 +204,7 @@
               "Description": "Saves the data",
               "Environment": {
                 "Variables": {
-                  "TABLE_NAME": "customers_addList"
+                  "TABLE_NAME": "dev-customer-wishlist"
                 }
               }
             },
@@ -213,14 +213,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "CreateItemLambdaVersion4PqyBzMXhEVkO0B8XLGzz5QFae2MoiG96bvlDxXdA": {
+          "CreateItemLambdaVersionuFwO61uh3fi86oAPMB0bIoiPvmCVYnBfJleyXBQT8": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "CreateItemLambdaFunction"
               },
-              "CodeSha256": "rg77jjXixCviTYRbMhElwIP7DdG0bwXtvl0iJaGtUKw=",
+              "CodeSha256": "NnZudwM4w6H5MHmJS2JClE/yBsSgtr+evd30LUB68po=",
               "Description": "Saves the data"
             }
           },
@@ -231,9 +231,9 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/customers-addlist/dev/1576133259731-2019-12-12T06:47:39.731Z/customers-addlist.zip"
+                "S3Key": "serverless/dev-customer-wishlist/dev/1576158099962-2019-12-12T13:41:39.962Z/dev-customer-wishlist.zip"
               },
-              "FunctionName": "customers-addlist-dev-deleteDuplicateItem",
+              "FunctionName": "dev-customer-wishlist-dev-deleteDuplicateItem",
               "Handler": "handler.deleteDuplicateItem",
               "MemorySize": 1024,
               "Role": {
@@ -247,7 +247,7 @@
               "Description": "deletes Duplicate",
               "Environment": {
                 "Variables": {
-                  "TABLE_NAME": "customers_addList"
+                  "TABLE_NAME": "dev-customer-wishlist"
                 }
               }
             },
@@ -256,21 +256,21 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "DeleteDuplicateItemLambdaVersionJmHIHUp0mYf0XgSyO9VmIFqbBRMqR5VfPfMeVxaNCzM": {
+          "DeleteDuplicateItemLambdaVersionLbiGC8xlIB6beozZ8LdWvGXlIpzqsLk0EIbIwib4": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "DeleteDuplicateItemLambdaFunction"
               },
-              "CodeSha256": "rg77jjXixCviTYRbMhElwIP7DdG0bwXtvl0iJaGtUKw=",
+              "CodeSha256": "NnZudwM4w6H5MHmJS2JClE/yBsSgtr+evd30LUB68po=",
               "Description": "deletes Duplicate"
             }
           },
           "ApiGatewayRestApi": {
             "Type": "AWS::ApiGateway::RestApi",
             "Properties": {
-              "Name": "dev-customers-addlist",
+              "Name": "dev-dev-customer-wishlist",
               "EndpointConfiguration": {
                 "Types": [
                   "EDGE"
@@ -394,7 +394,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1576133259435": {
+          "ApiGatewayDeployment1576158099668": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -497,7 +497,7 @@
                 }
               ],
               "BillingMode": "PAY_PER_REQUEST",
-              "TableName": "customers_addList"
+              "TableName": "dev-customer-wishlist"
             }
           }
         },
@@ -510,13 +510,13 @@
           "CreateItemLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "CreateItemLambdaVersion4PqyBzMXhEVkO0B8XLGzz5QFae2MoiG96bvlDxXdA"
+              "Ref": "CreateItemLambdaVersionuFwO61uh3fi86oAPMB0bIoiPvmCVYnBfJleyXBQT8"
             }
           },
           "DeleteDuplicateItemLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "DeleteDuplicateItemLambdaVersionJmHIHUp0mYf0XgSyO9VmIFqbBRMqR5VfPfMeVxaNCzM"
+              "Ref": "DeleteDuplicateItemLambdaVersionLbiGC8xlIB6beozZ8LdWvGXlIpzqsLk0EIbIwib4"
             }
           },
           "ServiceEndpoint": {
@@ -630,7 +630,7 @@
             }
           }
         ],
-        "name": "customers-addlist-dev-createItem",
+        "name": "dev-customer-wishlist-dev-createItem",
         "package": {},
         "memory": 1024,
         "timeout": 6,
@@ -649,7 +649,7 @@
             }
           }
         ],
-        "name": "customers-addlist-dev-deleteDuplicateItem",
+        "name": "dev-customer-wishlist-dev-deleteDuplicateItem",
         "package": {},
         "memory": 1024,
         "timeout": 6,
@@ -675,7 +675,7 @@
               }
             ],
             "BillingMode": "PAY_PER_REQUEST",
-            "TableName": "customers_addList"
+            "TableName": "dev-customer-wishlist"
           }
         }
       },
@@ -683,10 +683,10 @@
     },
     "serviceFilename": "serverless.yml",
     "layers": {},
-    "artifact": "/home/aifi/Downloads/deepSpeech/task/sls-unit-test/source/.serverless/customers-addlist.zip"
+    "artifact": "/home/aifi/Downloads/deepSpeech/aws-customer-wishlist/source/.serverless/dev-customer-wishlist.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/customers-addlist/dev/1576133259731-2019-12-12T06:47:39.731Z",
-    "artifact": "customers-addlist.zip"
+    "artifactDirectoryName": "serverless/dev-customer-wishlist/dev/1576158099962-2019-12-12T13:41:39.962Z",
+    "artifact": "dev-customer-wishlist.zip"
   }
 }

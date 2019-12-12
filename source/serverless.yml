@@ -1,7 +1,7 @@
-service: customers-addlist
+service: dev-customer-wishlist
 
 custom:
-  TABLE_NAME: customers_addList
+  TABLE_NAME: dev-customer-wishlist
 
 provider:
   name: aws

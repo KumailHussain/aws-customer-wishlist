@@ -9,7 +9,6 @@ module.exports.createItem = async data => {
 }
 
 module.exports.deleteDuplicateItem = async event => {
-    const res = await databaseManager.getAllItems();
 
-    return this.handleResponse(res);
+    return await databaseManager.getAllItems();
 }

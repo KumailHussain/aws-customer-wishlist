@@ -17,7 +17,7 @@ module.exports.findDuplicate = res => {
     var results = itemsArray.length > 0 ? true : false
     if(results){
             var params = {
-                RequestItems : {"customers_addList" : itemsArray}
+                RequestItems : {"dev-customer-wishlist" : itemsArray}
             }
             return { message : 'Duplicate Item(s) Found', params: params, removeDuplicate: true }
     } else {
