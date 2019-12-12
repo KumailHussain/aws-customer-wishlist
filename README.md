@@ -8,7 +8,7 @@
 
 There are 17 test cases.
 
-# To test the endpoints send a post request to following endpoints
+# To test the aws Lambda functions send a post request to following endpoints
 
 https://kg25648gzj.execute-api.us-east-2.amazonaws.com/dev/create
 
