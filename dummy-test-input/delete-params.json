@@ -1,0 +1,12 @@
+{
+  "RequestItems": {
+    "customers_addList": [
+     {
+                 "DeleteRequest" : {    "Key" : {"id" : "918342s121212"}}
+     },{
+                 "DeleteRequest" : {    "Key" : {"id" : "918342s126df1212"}}
+     }
+
+    ]
+  }
+}
